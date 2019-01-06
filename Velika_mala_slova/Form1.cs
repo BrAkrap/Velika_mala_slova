@@ -119,7 +119,15 @@ namespace Velika_mala_slova
 
         private void button2_Click(object sender, EventArgs e) // EXPORT
         {
+            SaveFileDialog save = new SaveFileDialog();
 
+            save.DefaultExt = "*.txt";
+            save.Filter = "TXT Files|*.txt";
+
+            if (save.ShowDialog() == System.Windows.Forms.DialogResult.OK && save.FileName.Length > 0)
+            {
+                richTextBox1.SaveFile(save.FileName);
+            }
         }
     }
 }
