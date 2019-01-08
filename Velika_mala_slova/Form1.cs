@@ -39,11 +39,14 @@ namespace Velika_mala_slova
             int duljina = richTextBox1.SelectionLength;
             int pocetak = richTextBox1.SelectionStart;
             bool pocetakRecenice = false;
-            string pom = richTextBox1.SelectedText;
             StringBuilder rezultantniTekst = new StringBuilder();
 
             richTextBox1.SelectedText = richTextBox1.SelectedText.ToLower();
 
+            richTextBox1.Select(pocetak, duljina);
+            string pom = richTextBox1.SelectedText;
+            
+            
             if (pocetak == 0)
             {
                 pocetakRecenice = true;
