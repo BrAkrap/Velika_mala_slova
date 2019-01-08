@@ -41,7 +41,7 @@ namespace Velika_mala_slova
             bool pocetakRecenice = false;
             string pom = richTextBox1.SelectedText;
             StringBuilder rezultantniTekst = new StringBuilder();
-            
+
             richTextBox1.SelectedText = richTextBox1.SelectedText.ToLower();
 
             if (pocetak == 0)
@@ -96,7 +96,7 @@ namespace Velika_mala_slova
 
             if (save.ShowDialog() == System.Windows.Forms.DialogResult.OK && save.FileName.Length > 0)
             {
-                richTextBox1.SaveFile(save.FileName);
+                File.WriteAllText(save.FileName, richTextBox1.Text);
             }
         }
     }
